@@ -1,0 +1,1 @@
+command = ["c:/windows/example.exe" "--some" "arguments"]
