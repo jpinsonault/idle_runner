@@ -52,9 +52,8 @@ def run_pausing_process(command, idle_threshold_seconds):
                 pause_process(process)
         else:
             total_idle_time = time.time() - start_idle_time
-            if counter % 20 == 0 and process.status() == STATUS_SUSPENDED:
+            if counter % 20 == 0 and process.status() == STATUS_STOPPED:
                 print("{}s left".format(int(idle_threshold_seconds - total_idle_time)))
-            print(total_idle_time)
             if total_idle_time > idle_threshold_seconds and process.status() == STATUS_STOPPED:
                 unpause_process(process)
 
